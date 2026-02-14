@@ -66,6 +66,28 @@ public class C_Restricted_Sorting2 {
         return answer;
     }
 
+    public static int solution2(List<Integer> arr){
+        List<Integer> sorted_arr = new ArrayList<>(arr);
+        Collections.sort(sorted_arr);
+
+        // find minimum and maximum element
+        int minimum = sorted_arr.get(0);
+        int maximum = sorted_arr.get(sorted_arr.size() - 1);
+
+        int k = Integer.MAX_VALUE;
+
+        for (int i = 0; i < arr.size(); i++) {
+            if(arr.get(i) == sorted_arr.get(i)) continue;
+
+            int a1 = Math.abs(arr.get(i) - minimum);
+            int a2 = Math.abs(arr.get(i) - maximum);
+
+            k = Math.min(k, Math.max(a1, a2));
+        }
+        return k == Integer.MAX_VALUE ? -1 : k;
+
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
