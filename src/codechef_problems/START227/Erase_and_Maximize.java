@@ -1,4 +1,4 @@
-package START227;
+package codechef_problems.START227;
 import java.util.Scanner;
 
 public class Erase_and_Maximize {

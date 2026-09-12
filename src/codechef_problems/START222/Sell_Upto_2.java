@@ -1,4 +1,4 @@
-package START222;
+package codechef_problems.START222;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 

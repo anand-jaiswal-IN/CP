@@ -1,4 +1,4 @@
-package START231;
+package codechef_problems.START231;
 import java.util.Scanner;
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package DSAMONDAY16;
+package codechef_problems.DSAMONDAY16;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package START223;
+package codechef_problems.START223;
 import java.util.Scanner;
 
 public class School_Trip {

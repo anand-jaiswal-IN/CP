@@ -1,4 +1,4 @@
-package START252;
+package codechef_problems.START252;
 import java.util.Scanner;
 
 public class OddEven {

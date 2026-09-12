@@ -1,4 +1,4 @@
-package START225;
+package codechef_problems.START225;
 import java.util.Scanner;
 
 public class Plus_Minus_Split {

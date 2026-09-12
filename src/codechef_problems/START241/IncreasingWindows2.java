@@ -1,4 +1,4 @@
-package START241;
+package codechef_problems.START241;
 import java.io.*;
 import java.util.*;
 

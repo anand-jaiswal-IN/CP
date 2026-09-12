@@ -1,4 +1,4 @@
-package START249;
+package codechef_problems.START249;
 import java.util.*;
 
 public class ProductExceed {

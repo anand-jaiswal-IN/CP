@@ -1,4 +1,4 @@
-package START218;
+package codechef_problems.START218;
 import java.util.Scanner;
 
 public class Collatz_Conjecture_Easy {

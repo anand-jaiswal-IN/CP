@@ -1,4 +1,4 @@
-package START225;
+package codechef_problems.START225;
 import java.util.*;
 
 public class Near_Yet_Far {

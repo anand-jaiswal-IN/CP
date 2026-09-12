@@ -1,4 +1,4 @@
-package START230;
+package codechef_problems.START230;
 import java.util.Scanner;
 import java.util.ArrayList;
 

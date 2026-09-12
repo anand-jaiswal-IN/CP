@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/minimum-cost-path-with-at-most-k-turns
 
+package leetcode_contests.Weekly_Contest_518;
+
 import java.util.*;
 
 public class Leetcode2 {

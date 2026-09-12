@@ -1,4 +1,4 @@
-package START217;
+package codechef_problems.START217;
 
 // package codechef_contests;
 import java.util.*;

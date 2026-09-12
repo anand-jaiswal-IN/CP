@@ -1,4 +1,4 @@
-package START224;
+package codechef_problems.START224;
 import java.util.Scanner;
 
 public class Advitiya_Coin {

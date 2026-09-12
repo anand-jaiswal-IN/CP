@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/count-robot-groups/
 
+package leetcode_contests.Weekly_Contest_518;
+
 public class Leetcode {
 
     public int countGroups(int[] position, int[] speed, int distance) {

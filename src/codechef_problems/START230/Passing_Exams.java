@@ -1,4 +1,4 @@
-package START230;
+package codechef_problems.START230;
 import java.util.Scanner;
 
 public class Passing_Exams {

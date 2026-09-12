@@ -1,4 +1,4 @@
-package DSAMONDAY20;
+package codechef_problems.DSAMONDAY20;
 
 import java.util.ArrayList;
 import java.util.Arrays;

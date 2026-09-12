@@ -1,4 +1,4 @@
-package START217;
+package codechef_problems.START217;
 import java.util.Scanner;
 
 public class Add_1_or_3 {

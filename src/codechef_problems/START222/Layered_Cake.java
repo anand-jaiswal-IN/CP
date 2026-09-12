@@ -1,4 +1,4 @@
-package START222;
+package codechef_problems.START222;
 import java.util.Scanner;
 
 public class Layered_Cake {

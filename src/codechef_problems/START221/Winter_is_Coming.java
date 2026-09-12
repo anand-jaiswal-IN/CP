@@ -1,4 +1,4 @@
-package START221;
+package codechef_problems.START221;
 import java.util.Scanner;
 
 public class Winter_is_Coming {

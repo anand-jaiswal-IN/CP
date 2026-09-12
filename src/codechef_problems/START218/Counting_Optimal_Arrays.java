@@ -1,4 +1,4 @@
-package START218;
+package codechef_problems.START218;
 import java.util.Scanner;
 
 public class Counting_Optimal_Arrays {

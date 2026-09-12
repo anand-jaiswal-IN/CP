@@ -1,4 +1,4 @@
-package START254;
+package codechef_problems.START254;
 import java.util.*;
 
 public class ReachWeight {

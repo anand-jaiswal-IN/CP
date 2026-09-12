@@ -1,4 +1,4 @@
-package START234;
+package codechef_problems.START234;
 import java.util.Scanner;
 
 public class Codechef {
