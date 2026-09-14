@@ -3,73 +3,51 @@ package leetcode_contests.Weekly_Contest_519;
 import java.util.*;
 
 public class Leetcode2 {
-    public boolean isPalindrome(int n) {
-        int ans = 0;
-        int nc = n;
 
-        while (nc > 0) {
-            int rem = nc % 10;
-            ans = (ans * 10) + rem;
-            nc /= 10;
-        }
-        return ans == n;
-    }
+    static ArrayList<Long> ep;
+    static ArrayList<Long> op;
+    static boolean initalized = false;
 
-    int l = 1_000_000 + 1;
+    public void init() {
+        ep = new ArrayList<>();
+        op = new ArrayList<>();
 
-    public List<Integer> evenPalindomeNumbers() {
-        List<Integer> ans = new ArrayList<>();
-        for (int i = 0; i < l; i += 2) {
-            if (isPalindrome(i))
-                ans.add(i);
-        }
-        return ans;
-    }
+        initializePalindromes("");
 
-    public List<Integer> oddPalindomeNumbers() {
-        List<Integer> ans = new ArrayList<>();
-        for (int i = 1; i < l; i += 2) {
-            if (isPalindrome(i))
-                ans.add(i);
-        }
-        return ans;
-    }
+        Collections.sort(ep);
+        Collections.sort(op);
 
-    List<Integer> epn, opn;
-    boolean isInitialized = false;
-    private void init(){
-        if(isInitialized) return;
-        epn = evenPalindomeNumbers();
-        opn = oddPalindomeNumbers();
-        isInitialized = true;
+        initalized = true;
     }
 
     public long minOperations(int[] nums) {
-        init();
+        if (!initalized)
+            init();
+
         long ans = 0;
+
         for (int i = 0; i < nums.length; i++) {
-            int x = nums[i];
-            List<Integer> list = (x % 2 == 0) ? epn : opn;
+            long x = (long) nums[i];
+            List<Long> list = (x % 2 == 0) ? ep : op;
             int i1 = lowerBound(list, x);
             int i2 = i1 + 1;
 
-            long best = 0;
-            if (i2 >= list.size()) {
-                best = (x - list.get(i1)) / 2;
-            } else {
-                best = Math.min(
-                        (x - list.get(i1)) / 2,
-                        (list.get(i2) - x) / 2);
+            long best = Long.MAX_VALUE;
+
+            if (i1 >= 0) {
+                best = Math.min(best, (x - list.get(i1)) / 2);
+            }
+            if (i2 < list.size()) {
+                best = Math.min(best, (list.get(i2) - x) / 2);
             }
 
             ans += best;
-
         }
 
         return ans;
     }
 
-    public int lowerBound(List<Integer> nums, int target) {
+    public int lowerBound(List<Long> nums, long target) {
         int s = 0, e = nums.size() - 1;
         while (s <= e) {
             int m = s + (e - s) / 2;
@@ -81,15 +59,50 @@ public class Leetcode2 {
         return e;
     }
 
+    public void initializePalindromes(String s) {
+        if (s.length() >= 5)
+            return;
+
+        for (int i = 0; i <= 9; i++) {
+            if (s.isEmpty() && i == 0)
+                continue;
+
+            StringBuilder base = new StringBuilder(s);
+            base.append(i);
+
+            String evenStr = base + new StringBuilder(base).reverse().toString();
+            long n1 = Long.parseLong(evenStr);
+            if (n1 <= 1_000_000_000L) {
+                if (n1 % 2 == 0)
+                    ep.add(n1);
+                else
+                    op.add(n1);
+            }
+            if (base.length() > 1) {
+                String oddStr = base + new StringBuilder(base).reverse().substring(1);
+                long n2 = Long.parseLong(oddStr);
+                if (n2 <= 1_000_000_000L) {
+                    if (n2 % 2 == 0)
+                        ep.add(n2);
+                    else
+                        op.add(n2);
+                }
+            }
+            if (base.length() == 1) {
+                if (i % 2 == 0)
+                    ep.add((long) i);
+                else
+                    op.add((long) i);
+            }
+
+            initializePalindromes(base.toString());
+        }
+    }
+
     public static void main(String[] args) {
         Leetcode2 obj = new Leetcode2();
         System.out.println(obj.minOperations(new int[] { 10, 12, 14, 16 }));
         System.out.println(obj.minOperations(new int[] { 9, 10, 11, 10 }));
         System.out.println(obj.minOperations(new int[] { 125 }));
-        System.out.println(
-                obj.minOperations(new int[] { 165, 400, 956, 841, 993, 517, 465, 424, 90, 10, 86, 168, 32, 145, 538 }));
-        System.out.println(
-                obj.minOperations(new int[] { 35, 47, 48, 59, 42, 19, 68, 3, 3, 47, 43, 64, 92, 2, 11, 87, 15, 26, 32,
-                        32, 18, 83, 3, 60, 17, 32, 84, 60, 27, 19, 73, 49, 36, 25, 14, 13, 13, 39, 31, 21, 39, 48 }));
     }
 }
